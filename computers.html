@@ -3,7 +3,9 @@
 
 <style>
 body {
-  background-color: black;
+  background-image: url("https://i.gifer.com/NvL.gif"), url("paper.gif");
+  background-repeat:repeat;
+  background-color: #cccccc;
 }
 h2 {
   color: white;
@@ -46,6 +48,19 @@ font-size: 20px;
 	font-size: 20px;
 	color: lightgreen;
 }
+.sidenav {
+  height: 50%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 65%;
+  bottom: 0;
+  left: 0;
+  background-color: #002e00;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-size: 30px;
+}
 </style>
 
 <!-- Sidebar -->
@@ -67,10 +82,16 @@ General Information:
  
 <p>
 
-<img src="glitch pc.GIF"" width="338" height="226">
 <iframe width="338" height="220" src="https://www.youtube.com/embed/10NuyhiTvd0">
 </iframe>
 </p>
+
+<div class="sidenav">
+  <a href="#about">About.</a>
+  <a href="#services">How to build a Computer.</a>
+  <a href="#clients">Where to buy Computers.</a>
+  <a href="#contact">Quantum Computers.</a>
+</div>
 
 <p>
 <button onclick="window.location.href = 'https://www.livescience.com/20718-computer-history.html';">Click here for redirection to the history on computers!</button>

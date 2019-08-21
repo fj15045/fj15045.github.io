@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<title>
+	KovaaKs's Patch notes page 2
+</title>
+
+<style>
+body {
+	background-color: red;
+	background-image: linear-gradient(90deg, darkred, #EE785E);
+margin: 0px;
+}
+ul{
+  list-style-type: none;
+  margin: 0px;
+  padding: 0;
+  width: 10%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  color: white;
+}
+
+li a {
+  display: block;
+  color: #FFE4E1;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: arial;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+  font: arial;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+.sidenav {
+	display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.sidenav {
+	list-style-type: none;
+  margin: 0px;
+  padding: 5px;
+  width: 10%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  color: white;
+  margin-left: 0%;
+}
+.topTitle{
+  font-size: 26px;
+  height: 50px;
+  width: 920px;
+  font-family: Tahoma;
+  position: relative;
+}
+
+h2 {
+  color: #FFE4E1;
+  text-align: center;
+}
+h3 {
+	color: #FFE4E1;
+	font-size: 30px;
+	font-family: Tahoma;
+}
+p {
+	color: #FFE4E1;
+	font-family: arial;
+	font-size: 20px;
+}
+h4 {
+	color: #FFE4E1;
+	font-family: arial;
+	font-size: 22px;
+}
+a {
+	color: #FFE4E1;
+	text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+</style>
+<body>
+
+<div class="topTitle">
+<ul><div class="sidenav">
+  <img src="https://raw.githubusercontent.com/fj15045/fj15045.github.io/master/kovaaks%20logo.PNG" style="float:left;width:200px;height:100px;">
+  <li><a href="Kovaak's Aim Trainer Info.html">Home</a></li>
+  <li><a href="Gameplay.html">Gameplay</a></li>
+  <li><a href="Patch Notes.html">Patch Notes</a></li>
+  <li><a href="https://store.steampowered.com/app/824270/KovaaKs_FPS_Aim_Trainer/">Steam</a></li>
+</div>
+</ul>
+	<h2>KovaaK's Patch Notes:</h2>
+</ul>
+</div>
+
+<div style="margin-left:10%;16px;height:200px;padding:20px">
+  <h3>All patch notes are from the <a href="https://store.steampowered.com/app/824270/KovaaKs_FPS_Aim_Trainer/">Steam</a> website. </h3>
+<p>
+1.0.5:<br>
+The biggest change this patch is improved performance. Previously some systems had hitching that was occurring at various frequencies, and this should fix the majority of it.<br>
+<br>
+*Officially moved from "Development" build configuration to "Shipping" build config. There are some trade-offs, and I've been debating on doing this for a while. At this point, I've decided it is worth the jump.<br>
+*This comes with much improved performance across the board. FPS averages will be higher, and the engine's garbage collection should be less intrusive in causing frame drops/hitching.<br>
+*The folder that the engine uses for configuration files and save has been relocated. I have a script that will run once to relocate your config files from the old folder (\SteamApps\common\FPSAimTrainer\) to the new folder (%localappdata%\FPSAimTrainer\). Hopefully this will be transparent to you.<br>
+*All of your old profiles/scenarios, .ini files (including weapon settings), sounds, maps, and crosshairs will work fine and won't require any changes.<br>
+*On the negative side, the console is gone (not that it did too much for most people, but I did add some menu options below that some were using the console for).<br>
+<br>
+Other changes:<br>
+*Scenario tooltips will now show the Steam username of who uploaded something to the workshop.<br>
+*Added Steam Rich presence when you are playing or editing a scenario. (friends can check what you are playing/editing)<br>
+*Set max resolution scale to 200 under Video Options.<br>
+*Added options for AntiAliasing under Game Options -> Video<br>
+*Added option to show/hide/move FPS counter under Game Options -> UI<br>
+*Made the "You killed ..." text smaller and transparent.<br>
+*Removed some defunct variables from Weapon Profiles when exporting to .wep and .sce files.
+</br>
+<p>
+1.0.4 Changes:<br>
+*Leaderboards for workshop scenarios! Clicking the podium button will now bring up the leaderboards for a scenario on the workshop (not for local files). The scoreboard also shows up when you complete a challenge.<br>
+*When updating a scenario on the workshop, authors are given the option to "Invalidate Old Scores". When this is checked, old scores will still be on the leaderboard server, but they are either hidden or show up with an asterisk (*) depending on your preference under Game Options -> LBs. When someone plays the challenge and has a previously invalidated score, his first new score will overwrite the old one, even if the score wasn't higher (just to get a valid score on the scoreboard).<br>
+*Clicking a user's name on the leaderboard takes you to their Steam profile.<br>
+*Added option to show only friends on leaderboard (Game Options -> LBs tab)<br>
+*Added choice to opt out of individual leaderboards when you go to play a scenario as a challenge.<br>
+*Added choice to opt out of all leaderboards on Game Options -> LBs.<br>
+*Updated UE from 4.18 to 4.19. Supposedly this comes with reduced input lag.<br>
+*Made Sprint Ability's speed multiplier minimum 0 (was 1).<br>
+*Modified upload/download buttons - Icon for Upload new or Download new is the old icon of a circle with a hollowed out arrow. Icon for Update or Download new version is a smaller arrow, no circle.<br>
+*Added note on Bot Weapons tab that the weapons are pulled from the chosen Character profile.<br>
+*Changed "ADS" hotbar text to "ADS/Zoom"<br>
+*Forced UE4 to do Garbage Collection when you pause and just before a challenge starts. Hopefully this helps get rid of mid-challenge stutters. The previous engine timer for automatic Garbage Collection was 60 seconds, it is now 600 seconds.<br>
+*Reworked some logic for selecting spawn spots to cause less framerate drops.<br>
+*Fixed bug of Escape->Spacebar causing the Scenario Editor to Scenario Browser transition to occur repeatedly.<br>
+*Changed default key bindings for weapons, abilities, and zoom to make a little more sense. (1-8 for weapons, Shift, E, Q, V for abilities, and Mouse2 for zoom).<br>
+*Added "Reset Session" bind, default set to F3. If you are in a challenge, it restarts the challenge. If you aren't, it just resets stats/accuracy. The key shows up in the Game Options -> Key Binds menu as well. (Removed "Reset Stats" key and replaced it with this)<br>
+<a href="Patch Notes.html"><u>Previous</u></a> <a href="Patch Notes 3.html"><u>Next</u></a><p>2/3</p>
+</p>
+
+<p>
+<br>
+
+</p>
+</div>
+
+</body>
+</html>
